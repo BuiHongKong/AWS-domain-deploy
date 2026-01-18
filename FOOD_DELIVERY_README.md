@@ -114,8 +114,9 @@ aws dynamodb create-table \
 
 **Sử dụng Seed Script (Recommended):**
 
+#### Local với DynamoDB Local
+
 ```bash
-# Local với DynamoDB Local
 cd scripts
 $env:AWS_REGION="ap-southeast-1"
 $env:RESTAURANTS_TABLE="food-delivery-local-restaurants"
@@ -124,9 +125,24 @@ $env:AWS_ENDPOINT_URL="http://localhost:8000"
 node seed-data.js
 ```
 
-Script sẽ import:
-- 4 restaurants (Italian, American, Asian, Japanese)
-- 19 menu items với hình ảnh (pizza, burgers, noodles, sushi, drinks, desserts)
+#### Seed lên AWS DynamoDB (Production/Dev)
+
+```bash
+cd scripts
+$env:AWS_REGION="ap-southeast-1"
+$env:RESTAURANTS_TABLE="fargate-processing-restaurants"
+$env:MENU_TABLE="fargate-processing-food-menu"
+# KHÔNG set AWS_ENDPOINT_URL để dùng AWS thật
+node seed-data.js
+```
+
+**Lưu ý:**
+- Đảm bảo AWS credentials đã được configure (`aws configure list`)
+- Table names: Nếu đã deploy Terraform với `project_name` khác, dùng table names tương ứng
+- Để lấy table names từ Terraform: `cd terraform && terraform output`
+- Script sẽ import:
+  - 4 restaurants (Italian, American, Asian, Japanese)
+  - 19 menu items với hình ảnh (pizza, burgers, noodles, sushi, drinks, desserts)
 
 **Xem thêm:** `sample-data/README.md` để biết cách seed data khác hoặc thêm data thủ công.
 
