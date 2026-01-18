@@ -1,0 +1,30 @@
+[
+  {
+    "restaurantId": "rest-001",
+    "name": "Pizza Palace",
+    "description": "Authentic Italian pizzas with fresh ingredients",
+    "cuisine": "Italian",
+    "address": "123 Main Street, Singapore"
+  },
+  {
+    "restaurantId": "rest-002",
+    "name": "Burger House",
+    "description": "Gourmet burgers and crispy fries",
+    "cuisine": "American",
+    "address": "456 Oak Avenue, Singapore"
+  },
+  {
+    "restaurantId": "rest-003",
+    "name": "Noodle Express",
+    "description": "Fresh Asian noodles and soups",
+    "cuisine": "Asian",
+    "address": "789 Pine Road, Singapore"
+  },
+  {
+    "restaurantId": "rest-004",
+    "name": "Sushi World",
+    "description": "Fresh sushi and Japanese cuisine",
+    "cuisine": "Japanese",
+    "address": "321 Beach Road, Singapore"
+  }
+]
