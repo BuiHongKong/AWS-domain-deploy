@@ -72,17 +72,9 @@ Xem chi tiết và cách sử dụng trong `sample-data/README.md`
 
 ### 1. Setup Database Tables
 
-**Option A: Sử dụng Terraform (Recommended)**
+> **Lưu ý:** Trước khi tạo tables, bạn cần chạy DynamoDB Local. Xem hướng dẫn setup DynamoDB Local ở phần sau.
 
-```bash
-cd terraform-local-db
-terraform init
-terraform apply
-```
-
-> **Lưu ý:** Terraform sẽ tạo tables trên AWS DynamoDB thật. Nếu muốn dùng DynamoDB Local (chạy trên máy), dùng Option B hoặc xem `terraform-local-db/README.md` để biết thêm chi tiết.
-
-**Option B: Tạo tables với AWS CLI**
+**Tạo tables với AWS CLI (DynamoDB Local)**
 
 ```bash
 # Orders table
@@ -119,8 +111,9 @@ aws dynamodb create-table \
 ```bash
 cd scripts
 $env:AWS_REGION="ap-southeast-1"
-$env:RESTAURANTS_TABLE="food-delivery-local-restaurants"
-$env:MENU_TABLE="food-delivery-local-menu"
+$env:RESTAURANTS_TABLE="restaurants"
+$env:MENU_TABLE="food-menu"
+$env:ORDERS_TABLE="food-orders"
 $env:AWS_ENDPOINT_URL="http://localhost:8000"
 node seed-data.js
 ```
@@ -149,13 +142,14 @@ node seed-data.js
 ### 3. Run Services
 
 **Terminal 1 - API:**
-```bash
+```powershell
 cd api
 npm install
-AWS_REGION=ap-southeast-1 \
-ORDERS_TABLE=food-orders \
-MENU_TABLE=food-menu \
-RESTAURANTS_TABLE=restaurants \
+$env:AWS_REGION="ap-southeast-1"
+$env:ORDERS_TABLE="food-orders"
+$env:MENU_TABLE="food-menu"
+$env:RESTAURANTS_TABLE="restaurants"
+$env:AWS_ENDPOINT_URL="http://localhost:8000"
 npm run dev
 ```
 

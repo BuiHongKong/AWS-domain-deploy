@@ -21,14 +21,13 @@ This project is a **Food Delivery MVP** system featuring:
 ├── customer-dashboard/     # Customer-facing React app
 ├── admin-dashboard/        # Admin React app
 ├── terraform/              # Infrastructure as Code (ECS, ALB, DynamoDB)
-├── terraform-local-db/     # Local DynamoDB setup
 ├── sample-data/            # Sample restaurants and menu items
 └── scripts/                # Utility scripts (seed data, etc.)
 ```
 
 ## Local Development
 
-1. **Setup Database** - See `terraform-local-db/README.md`
+1. **Setup Database** - See [FOOD_DELIVERY_README.md](./FOOD_DELIVERY_README.md#local-development)
 2. **Seed Sample Data** - Run `scripts/seed-data.js`
 3. **Start Services** - See [FOOD_DELIVERY_README.md](./FOOD_DELIVERY_README.md#local-development)
 
@@ -36,7 +35,6 @@ This project is a **Food Delivery MVP** system featuring:
 
 - **[FOOD_DELIVERY_README.md](./FOOD_DELIVERY_README.md)** - Complete project documentation
 - **[sample-data/README.md](./sample-data/README.md)** - Sample data guide
-- **[terraform-local-db/README.md](./terraform-local-db/README.md)** - Local DynamoDB setup
 
 ## Technology Stack
 
