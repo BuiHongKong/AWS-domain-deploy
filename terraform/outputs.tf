@@ -29,3 +29,18 @@ output "api_service_name" {
   value       = aws_ecs_service.api.name
 }
 
+# Dev DynamoDB outputs
+output "dev_orders_table_name" {
+  description = "DynamoDB table name for dev orders"
+  value       = aws_dynamodb_table.dev_food_orders.name
+}
+
+output "dev_menu_table_name" {
+  description = "DynamoDB table name for dev menu"
+  value       = aws_dynamodb_table.dev_food_menu.name
+}
+
+output "dev_restaurants_table_name" {
+  description = "DynamoDB table name for dev restaurants"
+  value       = aws_dynamodb_table.dev_restaurants.name
+}
