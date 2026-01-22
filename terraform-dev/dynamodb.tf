@@ -14,6 +14,17 @@ resource "aws_dynamodb_table" "dev_food_orders" {
     type = "S"
   }
 
+  # Attributes for GSI
+  attribute {
+    name = "status"
+    type = "S"
+  }
+
+  attribute {
+    name = "createdAt"
+    type = "S"
+  }
+
   # Global Secondary Index for querying by status
   global_secondary_index {
     name            = "StatusIndex"
